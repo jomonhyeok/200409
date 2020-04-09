@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $(":text").css("background-color","red", "height","50px");
+            $("ul li:nth-of-type(3)").css("color","red","background-color","green");
+            $("h1, h2").css("color","red");
+            $("#asd").click(function(){
+                $("h4").css("color","red");
+            });
+            $('.content').click(function(){
+                $('.content').hide();
+            });
+            $("ul li:first-of-type").mouseover(function(){
+                $("ul li:first-of-type").css("color","green");
+            });
+            $("ul li:first-of-type").mouseout(function(){
+                $("ul li:first-of-type").css("color","red");
+            });
+            $("ul li:first-of-type").focus(function(){
+                $("ul li:first-of-type").css("color","red");
+            });
+            $("ul:first-of-type").mouseenter(function(){
+                $(this).css("background-color","pink");
+            });
+            $("ul:last-of-type").mouseleave(function(){
+                $("ul:last-of-type").css("background-color","skyblue");
+            });
+            $(".mm").click(function(){
+                $("h1").animate({width:"300px", height:"50px", left: "500px"},1000).animate({width:"200px",height:"500px",opacity:"0.8"},2000)
+            });
+            $(".ll").click(function(){
+                $("h2").animate({margin,left : "+=100px"},1000)
+            });
+            
+        });
+    </script>
+    <style>
+        h1{width: 100px; height: 100px; background-color: #535353;}
+        h2{width: 200px; height: 100px; margin-left: 50px; background-color: aqua;}
+    </style>
+</head>
+<body>
+    <h1>jquery</h1>
+    <h2>jquery</h2>
+    <input type="checkbox">
+    <input type="text" placeholder="asdf">
+    <ul>
+        <li>Home</li>
+        <li>Devices</li>
+        <li>Delivery & Payment</li>
+        <li>Guarantee</li>
+        <li>About Us</li>
+    </ul>
+    <ul>
+        <li>TOP SALES</li>
+        <li>BRAND FOCUS</li>
+        <li>HI-TECH</li>
+        <li>BEST SELLERS</li>
+        <li>PROJECTS</li>
+        <li>SUPPORT</li>
+    </ul>
+    <h4>hans</h4>
+    <button id="asd">jquery</button>
+    <div class="content">Hello world!!</div>
+    <button class="mm">has</button>
+    <button class="ll">hasd</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ex ipsam mollitia assumenda perspiciatis sed ipsum temporibus officia, <br>excepturi nostrum reiciendis qui illum perferendis? Hic sapiente repellendus reprehenderit doloremque cumque.</p>
+</body>
+</html>
