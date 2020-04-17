@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>javascript</li>
+        <li>java</li>
+        <li>html</li>
+        <li>css</li>
+    </ul>
+    <script>
+        /*
+            scope유효범위
+
+            *let
+            let 블록단위의 scope에서만 지원된다.
+        */
+        
+        var name ="global";
+        function home(){
+            let homevar = "homevar";
+            for(let i=0; i<100;i++){
+
+            }
+            //console.log(i);
+            console.log(homevar);
+        }
+        //home();
+
+        //closure
+        var list = document.querySelectorAll('li');
+        for(let i=0; i<list.length; i++){ //var i는 클로저
+            list[i].addEventListener('click',function(){
+                console.log(i+ "번째 리스트입니다.");
+            });
+        }//let i는 지역변수화시킨다.
+        
+        //const
+        function homes(){
+            var homes ='my'; //수정하면 안되는 경우인데
+            homes = "your";  //수정이 되는경우가 있다.
+            console.log(homes);
+
+            const home ='me'; 
+            home ='you';
+            console.log(home);
+            //const를 기본으로 사용하고 
+            //그런데 변경이 될 수 있는 변수는 let을 사용하고
+            //var는 사용하지 않는다.
+        }
+        // homes();
+
+        function homeless(){
+            const list=['apple','orange','watermelon'];
+            list.push('banana');
+            console.log(list);
+            //const를 사용하더라도 배열과 오브젝트의 값을 변경하는 것은 가능하다.
+            //값을 재할당하는 경우만 불가능하다.
+        }
+        // homeless();
+        //immutable array를 어떻게 만들지? 수정이 가능한 array
+        //뒤로가기, 앞으로가기
+        const list1=['apple','orange','watermelon'];
+        list2 =[].concat(list, "banana");
+        console.log(list1, list2);
+    </script>
+</body>
+</html>

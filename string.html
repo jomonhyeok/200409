@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            정규표현식(regular expression)
+            정보를 추출할때 사용
+            정보가 존재하는지 확인할때 사용
+            정보를 다른정보로 치환 할 때 사용;
+        */
+       //정규표현식 리터털
+       var str1=/a./ //찾고자하는 것 a    (.)이붙으면 하나의 문자
+       var str2='abcde';
+       // 정규표현식 객체 생성자
+       var pattern = new RegExp('a');
+
+       //RegExp.exec()
+        console.log(str1.exec('abcde')); //값이 있으면 값을 리턴
+        //RegExp.test() 
+        //test는 인자 안에 패턴에 해당되는 문자열이 있으면 true, 없으면 false를 리턴한다.
+        console.log(pattern.test('abcdef')); // true
+        
+        //문자열 메소드 실행
+        //String.match()
+
+        //String.replace() 치환
+        str2.replace(pattern, 'A');
+        // 패턴을 찾아 A로 바꾼다
+
+
+        //옵션
+        //i를 붙이면 대소문자를 구분하지 않느다.
+        var xi = /a/;
+        console.log("Abcde".match(xi));
+
+        var oi =/a/i;
+        console.log("Abcde".match(oi));
+
+        //g를 붙이면 검색된 모든 결과를 리턴한다. (global)
+        var xg = /a/;
+        console.log("abcdea".match(xg));
+        var og = /a/g;
+        console.log("abcdea".match(og));
+        //i, g를 같이 쓸 수 있다.
+
+
+
+        //캡쳐
+        /*
+            \w : 문자라는 의미(a~z,A~Z,0~9)
+            +  : 하나이상인 경우 유효
+            \S : 공백
+        */
+        var pattern2 = /(\w+)\s(\w+)/;
+        var str4 = "coding everybody";
+        var result = str4.replace(pattern2, "$2, $1");
+        console.log(result);
+
+       //Es2015 string에 새로운 메서드들
+       let str ="hello world! ^^0";
+
+    </script>
+</body>
+</html>
